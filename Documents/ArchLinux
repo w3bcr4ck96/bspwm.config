@@ -1,0 +1,105 @@
+ArchLinux UEFI (Instalación)
+-1. loadKeys la-latin1
+-2. (comprobar UEFI) ls /sys/firmware/efi/efivars
+-3. timedatectl set-ntp true
+-4. partition disk - boot,root and swap
+4.1 Format Partition - 
+Boot
+mkfs.vfat -F32 /dev/sda1
+Root
+mkfs.ext4 /dev/sda2
+Swap
+mkswap /dev/sda3
+swapon /dev/sda3
+-5. Mount Partition
+Root
+mount /dev/sda2 /mnt
+Create directorie boot
+mkdir -p /mnt/boot/efi
+Mount directorie boot
+mount /dev/sda1 /mnt/boot/efi
+-6. cd /etc/pacman.d 
+ls
+less mirrorlist
+-7. Install system base
+pacstrap /mnt base linux linux-firmware base-devel grub efibootmgr os-prober networkmanager network-manager-applet pulseaudio nano vim gvfs gvfs-afc gvfs-mtp xdg-user-dirs xf86-input-synaptics netctl wpa_supplicant dialog
+-8. genfstab -U /mnt >> /mnt/etc/fstab
+-9. arch-chroot /mnt
+-10. ls /usr/share/zoneinfo
+ls /usr/share/America
+ln -sf /usr/share/Bogota /etc/localtime
+-11. hwclock --systohc
+-12...
+-13. systemctl enable NetworkManager
+-14. vim /etc/locale.gen
+#es CO.UTF8
+#en US.UTF8
+-15. locale-gen
+-16. echo LANG:en US.UTF >> /etc/locale.gen
+echo KEYMAP=la-latin1 >> /etc/vconsole.conf
+-17. echo ArchLinux >> /etc/hostname
+-18. vim /etc/hosts
+127.0.0.1       localhost
+::1     localhost
+127:0.1.1       ArchLinux.localdomain       ArchLinux
+-19. passwd (root)
+#####
+#####
+-20. grub-install --efi-directory=/boot/efi --bootloader-id='Arch Linux' --target=x86_64-efi
+-21. grub-mkconfig -o /boot/grub/grub.cfg
+-22. pacman -S sudo
+-23. visudo
+%wheel
+-24. useradd -m Arch451
+passwd #####
+#####
+-25. usermod -aG wheel,audio,disk,floppy,input,kvm,optical,scanner,storage,video,camera,network,power, Arch451
+-26. groups Arch451
+-27. UNMOUNT AND RESET
+-28. umount /mnt/boot/efi
+umount /mnt
+reboot
+-29. enable networkmanager
+systemctl start NetworkManager.service
+systemctl enable NetworkManager.service
+exit
+-30. first login with normal USER
+-31. systemctl enable NetworkManager.service
+-32. sudo pacman -Syyu
+-33. sudo pacman -S xorg-server xorg-xinit
+-34. sudo pacman -S mesa mesa-demos
+-35. sudo pacman -S xf86-video-intel intel-ucode
+
+sudo pacman -S lxdm
+sudo systemctl enable lxdm.service
+
+sudo pacman -S cdm
+sudo systemctl enable cdm.service
+
+----x
+
+ sudo pacman -S xfce4 xfce4-goodies
+
+----x
+
+pacman -Syyu
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd ..
+sudo rm -rf yay
+yay -Syyu
+yay -S pamac-aur --noconfirm
+
+curl -O https://blackarch.org/strap.sh
+mv strap.sh Downloads
+chmod +x strap.sh
+sudo ./strap.sh
+/etc/pacman.conf- /etc/pacman.d/blackarch-mirrorlist
+sudo pacman -S blackman
+sudo pacman -Sg | grep blackarch
+sudo pacman -S python-pip
+
+---------------------------------------------------------------------------
+ 
+if yay present multilib error, it's because in the pacman.conf exist a duplicate of a mirrorlist or a repository
