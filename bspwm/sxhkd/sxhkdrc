@@ -1,0 +1,245 @@
+#
+# wm independent hotkeys
+#
+
+#Alacritty
+super + Return
+    alacritty
+    
+#Urxvt
+super + t
+    urxvt   
+
+#reload sxhkd:
+super + alt + s
+	pkill -USR1 -x sxhkd	
+
+#Reload bspwm
+super + alt + r
+	~/.config/bspwm/bspwmrc
+
+#File-Manager
+super + shift + Return
+	pcmanfm	
+
+#Pamac-manager
+super + shift + p
+    pamac-manager
+	
+#Chromium
+super + shift + c
+    chromium --incognito -no-default-browser-check	
+    
+#Nitrogen
+super + shift + n
+     nitrogen
+     
+#Hide polybar
+super + y
+    polybar-msg cmd toggle     
+
+#Picom Toggle
+ctrl + alt + o
+    ~/.config/bspwm/scripts/picom-toggle.sh
+
+#Htop
+super + h
+    urxvt 'htop task manager' -e htop
+     
+#kill
+super + q
+	bspc node -c     
+     
+#Xkill
+super + Escape
+    xkill
+    
+##---------- Rofi Launcher & Menus ----------##    
+
+#Rofi
+super + shift + d
+    rofi -show run
+
+# Rofi App Launcher
+super + {d,x,v,r}
+	sh ~/.config/rofi/bin/{launcher_text,android_powermenu,android_volume,asroot}
+
+# Rofi Menus
+ctrl + alt + {m,n}
+	sh ~/.config/rofi/bin/{android_mpd,applet_network}
+
+################################################
+
+#arcolinux-welcome-app
+ctrl + alt + w
+     arcolinux-welcome-app
+
+#arcolinux-tweak-tool
+ctrl + alt + e
+    arcolinux-tweak-tool
+
+#Xfce4-settings-manager
+ctrl + alt + x
+     xfce4-settings-manager
+
+#Xfce4-appfinder
+alt + F2
+    xfce4-appfinder
+
+#Xcfe4-TaskManager
+ctrl + shift + Escape
+    xfce4-taskmanager
+
+#xfce4-terminal dropdown
+F12
+    xfce4-terminal --drop-down
+
+#Pulse Audio Control
+ctrl + alt + p
+     pavucontrol
+
+#screeenshooter
+Print
+     xfce4-screenshooter
+
+#
+# MULTIMEDIA KEYS
+#
+
+#Raises volume
+XF86AudioRaiseVolume
+    amixer set Master 10%+
+
+#Lowers volume
+XF86AudioLowerVolume
+    amixer set Master 10%-
+
+#Mute
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
+
+#PLAY
+XF86AudioPlay
+    playerctl play-pause
+
+#Next
+XF86AudioNext
+    playerctl next
+
+#previous
+XF86AudioPrev
+    playerctl previous
+
+#Stop
+XF86AudioStop
+    playerctl stop
+
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+#############################################
+
+#Toggle fullscreen of window
+super + f
+	bspc node --state \~fullscreen
+
+# Toggle pseudo tiling of window
+super + p
+	bspc node --state \~pseudo_tiled
+
+# set the window state
+super + space
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+#
+# SUPER KEYS
+#
+
+#Rotate desktop
+alt + space
+	bspc node @/ --rotate {90,-90}
+	
+# focus the node in the given direction
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Move focused window to other monitor
+super + shift + Left
+	bspc node -m next --follow
+
+# Move focused window to other monitor
+super + shift + Right
+		bspc node -m next --follow
+
+# Move focused window to other monitor
+super + shift + Up
+	bspc node -m next --follow
+
+# Move focused window to other monitor
+super + shift + Down
+		bspc node -m next --follow
+
+# Focus parent/brother/first/second for preselection
+super + ctrl + {e,r,t,y}
+	bspc node --focus @{parent,brother,first,second}
+
+# Preselect the splitting area for next window on leaf/parent
+super + ctrl + {u,i,o,p}
+	bspc node --presel-dir \~{west,south,north,east}
+
+# Define splitting ratio for next window on leaf/parent
+super + ctrl + {_,shift +}{1-9}
+	bspc node {_,@/} --presel-ratio 0.{1-9}
+
+# Expand tiled space
+alt + shift + {h,j,k,l}
+	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+#
+# Selection
+#
+
+# Switch workspace
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+# Focus next/previous window
+alt + Left
+	bspc node --focus west
+
+# Focus next/previous window
+alt + Right
+	bspc node --focus east
+
+# Focus Up window
+alt + Up
+	bspc node --focus north
+
+# Focus Down window
+alt + Down
+	bspc node --focus south
+	
+# Change focus to next window, including floating window
+alt + Tab
+	bspc node -f {next.local,prev.local}	
+	
+# Switch to last opened workspace
+super + {Tab,grave}
+	bspc {node,desktop} -f last	
+
+#
+# WorkSpaces
+#
+
+#Focus selected desktop FOR QWERTY KEYBOARDS
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+#Move window to selected desktop FOR QWERTY KEYBOARDS
+super + shift + {1-9,0}
+    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
