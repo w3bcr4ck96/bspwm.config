@@ -65,8 +65,8 @@ super + {d,x,v,r}
 	sh ~/.config/rofi/bin/{launcher_text,android_powermenu,android_volume,asroot}
 
 # Rofi Menus
-ctrl + alt + {m,n}
-	sh ~/.config/rofi/bin/{android_mpd,applet_network}
+ctrl + alt + n
+	sh ~/.config/rofi/bin/applet_network
 
 ################################################
 
