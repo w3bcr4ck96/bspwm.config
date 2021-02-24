@@ -61,8 +61,8 @@ super + shift + d
     rofi -show run
 
 # Rofi App Launcher
-super + {d,x,v,r}
-	sh ~/.config/rofi/bin/{launcher_text,android_powermenu,android_volume,asroot}
+super + {d,x,v}
+	sh ~/.config/rofi/bin/{launcher_text,android_powermenu,android_volume}
 
 # Rofi Menus
 ctrl + alt + n
