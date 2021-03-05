@@ -5,7 +5,7 @@
 ! ------------------------------------------------------------------------------
 
 xterm*font: 7x13
-xterm*faceName: Monospace:size=12:antialias=false
+xterm*faceName: Hack:size=12:antialias=false
 xterm*loginShell: true
 xterm*vt100*geometry: 90x34
 xterm*saveLines: 2000
@@ -76,30 +76,30 @@ URxvt*colorUL:      	 #87afd7
 
 
 ! colors
-URxvt*color0: #3f3f3f
-URxvt*color1: #ac3c3c
-URxvt*color2: #60b48a
-URxvt*color3: #dfaf8f
-URxvt*color4: #506070
-URxvt*color5: #dc8cc3
-URxvt*color6: #8cd0d3
-URxvt*color7: #dcdccc
-URxvt*color8: #79A9FF
-URxvt*color9: #da6e6e
-URxvt*color10: #c3bf9f
-URxvt*color11: #f0dfaf
-URxvt*color12: #94bff3
-URxvt*color13: #ec93d3
-URxvt*color14: #93e0e3
-URxvt*color15: #ffffff
+URxvt*color0: #00FF00
+URxvt*color1: #FF0000
+URxvt*color2: #00FF00
+URxvt*color3: #FF0000
+URxvt*color4: #00FF00
+URxvt*color5: #FF0000
+URxvt*color6: #00FF00
+URxvt*color7: #FF0000
+URxvt*color8: #FF0000
+URxvt*color9: #00FF00
+URxvt*color10: #FF0000
+URxvt*color11: #00FF00
+URxvt*color12: #FF0000
+URxvt*color13: #00FF00
+URxvt*color14: #FF0000
+URxvt*color15: #00FF00
 
 ! fonts
 URxvt*letterSpace: 	    		-2
-URxvt*font:                 	xft:Monospace:regular:size=12
-URxvt*imFont:               	xft:Monospace:regular:size=12
-URxvt*boldFont:             	xft:Monospace:bold:size=12
-URxvt*italicFont:           	xft:Monospace:italic:size=12
-URxvt*boldItalicFont:     		xft:Monospace:regular:size=12
+URxvt*font:                 	xft:Hack:regular:size=12
+URxvt*imFont:               	xft:Hack:regular:size=12
+URxvt*boldFont:             	xft:Hack:bold:size=12
+URxvt*italicFont:           	xft:Hack:italic:size=12
+URxvt*boldItalicFont:     		xft:Hack:regular:size=12
 ! run :.!fc-list | grep <font-name>
 
 ! perl extensions
