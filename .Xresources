@@ -54,12 +54,12 @@ URxvt*iconFile:  		/usr/share/icons/Sardi-Mono/scalable/apps/terminal.svg
 ! appearance
 URxvt*depth:             0
 URxvt*transparent:      true
-URxvt*shading:          100
+URxvt*shading:          6
 !URxvt*background:       rgba:2222/2222/2222/AAAA
 URxvt*background:       [80]#000000
 !URxvt*background:       [70]#000000
 !URxvt*background:        [80]#000000
-URxvt*foreground:        #F8F8FF
+URxvt*foreground:        #ffffff
 URxvt*underlineColor:    #4682B4
 URxvt*highlightColor:    #4682B4
 URxvt*throughColor:      Blue
@@ -76,22 +76,22 @@ URxvt*colorUL:      	 #87afd7
 
 
 ! colors
-URxvt*color0: #00FF00
-URxvt*color1: #FF0000
-URxvt*color2: #00FF00
-URxvt*color3: #FF0000
-URxvt*color4: #00FF00
-URxvt*color5: #FF0000
-URxvt*color6: #00FF00
-URxvt*color7: #FF0000
-URxvt*color8: #FF0000
-URxvt*color9: #00FF00
-URxvt*color10: #FF0000
-URxvt*color11: #00FF00
-URxvt*color12: #FF0000
-URxvt*color13: #00FF00
-URxvt*color14: #FF0000
-URxvt*color15: #00FF00
+URxvt*color0: #07001d
+URxvt*color1: #571968
+URxvt*color2: #00ffff
+URxvt*color3: #573086
+URxvt*color4: #454697
+URxvt*color5: #79238c
+URxvt*color6: #3f408b
+URxvt*color7: #9b9cc7
+URxvt*color8: #9b9cc7
+URxvt*color9: #75188f
+URxvt*color10: #4242b9
+URxvt*color11: #6f32ba
+URxvt*color12: #7778C9
+URxvt*color13: #a422c1
+URxvt*color14: #00ffff
+URxvt*color15: #cfd0ff
 
 ! fonts
 URxvt*letterSpace: 	    		-2
@@ -147,7 +147,7 @@ UXTerm*termName: xterm-256color
 
 UXTerm*cursorColor:        white
 UXTerm*VT100.geometry:     90x30
-UXTerm*font:               Monospace
+UXTerm*font:               Hack
 UXTerm*faceSize:		   12
 UXTerm*dynamicColors:      true
 UXTerm*utf8:               2
