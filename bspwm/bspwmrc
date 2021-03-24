@@ -82,7 +82,7 @@ bspc rule -a vlc desktop='^4'  follow=on
 bspc rule -a mpv desktop='^4'  follow=on
 bspc rule -a Geany desktop='^5'  follow=on
 bspc rule -a retroarch desktop='^6'  follow=on
-bspc rule -a Gimp desktop='^7'  follow=on
+bspc rule -a gimp desktop='^7'  follow=on
 #bspc rule -a Atom desktop='^9' follow=on
 #bspc rule -a Deezer desktop='^10' follow=on
 #bspc rule -a Steam desktop='^10'
