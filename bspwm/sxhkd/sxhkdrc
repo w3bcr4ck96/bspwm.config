@@ -7,8 +7,8 @@ super + Return
     alacritty
     
 #Urxvt
-super + t
-    urxvt   
+super + shift + space
+    termite   
 
 #reload sxhkd:
 super + alt + s
@@ -44,7 +44,7 @@ ctrl + alt + o
 
 #Htop
 super + h
-    urxvt 'htop task manager' -e htop
+    termite 'htop task manager' -e htop
      
 #kill
 super + q
@@ -53,6 +53,11 @@ super + q
 #Xkill
 super + Escape
     xkill
+    
+#Lockscreen
+ctrl + alt + l
+    betterlockscreen -l
+    
     
 ##---------- Rofi Launcher & Menus ----------##    
 
