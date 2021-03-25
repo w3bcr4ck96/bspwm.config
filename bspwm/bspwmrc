@@ -54,6 +54,7 @@ bspc rule -a VirtualBox Machine state=fullscreen
 #Floating applications
 bspc rule -a Alacritty state=floating
 bspc rule -a Termite state=floating
+bspc rule -a '*:*:Tor Browser' state=floating
 bspc rule -a Arandr state=floating
 bspc rule -a feh state=floating
 bspc rule -a Galculator state=floating
@@ -85,6 +86,7 @@ bspc rule -a Geany desktop='^5'  follow=on
 bspc rule -a Wps desktop='^5'  follow=on
 bspc rule -a retroarch desktop='^6'  follow=on
 bspc rule -a Gimp-2.10 desktop='^7'  follow=on
+bspc rule -a '*:*:Tor Browser' desktop='^8'  follow=on
 bspc rule -a Nitrogen desktop='^8'  follow=on
 bspc rule -a Lxappearance desktop='^8'  follow=on
 bspc rule -a TelegramDesktop desktop='^9'  follow=on
@@ -92,4 +94,3 @@ bspc rule -a Pamac-manager desktop='^10'  follow=on
 #bspc rule -a Atom desktop='^9' follow=on
 #bspc rule -a Deezer desktop='^10' follow=on
 #bspc rule -a Steam desktop='^10'
-
