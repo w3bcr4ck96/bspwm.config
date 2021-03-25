@@ -6,7 +6,7 @@
 super + Return
     alacritty
     
-#Urxvt
+#Termite
 super + shift + space
     termite   
 
